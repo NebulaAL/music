@@ -8,8 +8,6 @@
     <div class="button-tools">
       <button class="button" @click="audioPlay">{{ isInit ? '暂停' : '播放' }}</button>
       <button class="button" @click="getColor">切换颜色</button>
-      <button class="button" @click="getPrev">上一首</button>
-      <button class="button" @click="getNext">下一首</button>
     </div>
   </div>
 </template>
@@ -133,11 +131,12 @@ export default {
 .music-analyser {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .canvas-container {
-  width: 100vw - 400px;
+  margin-left: 20px;
+  width: 850px;
   height: 500px;
   border: 4px solid #f2f2f2;
 }
@@ -146,6 +145,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 200px;
+  margin-left: 50px;
   gap: 20px;
 }
 
