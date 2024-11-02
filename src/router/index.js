@@ -3,7 +3,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/index/index'
 import Analysis from '../components/Analysis.vue'
-import Effect from '../components/Effect.vue'
 import Transcribe from '../components/Transcribe.vue'
 
 Vue.use(Router)
@@ -29,11 +28,6 @@ export default new Router({
           path: '/transcribe',
           name: 'transcribe',
           component: Transcribe
-        },
-        {
-          path: '/effect',
-          name: 'effect',
-          component: Effect
         }
       ]
     }
