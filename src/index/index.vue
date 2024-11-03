@@ -10,9 +10,6 @@
             <el-menu-item index="2" @click="transcribeClicked">
                 <span slot="title">音频录制</span>
             </el-menu-item>
-            <el-menu-item index="3" @click="effectClicked">
-                <span slot="title">音频效果</span>
-            </el-menu-item>
         </el-menu>
        <router-view/>
     </div>
@@ -27,9 +24,6 @@ export default {
     },
     transcribeClicked () {
       this.$router.push('/transcribe')
-    },
-    effectClicked () {
-      this.$router.push('/effect')
     }
   }
 }

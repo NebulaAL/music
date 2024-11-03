@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="div">
       <button v-if="!isRecording" @click="startRecording">开始录音</button>
       <button v-else @click="stopRecording">停止录音</button>
       <audio v-if="recordedAudio" ref="audioPlayer" controls></audio>
@@ -18,6 +18,8 @@
     },
     methods: {
       startRecording () {
+        this.recordedAudio = false
+        this.chunks = []
         navigator.mediaDevices.getUserMedia({ audio: true })
           .then(stream => {
             this.isRecording = true
@@ -32,9 +34,7 @@
       stopRecording () {
         this.isRecording = false
         this.mediaRecorder.stop()
-        const blob = new Blob(this.chunks, { type: 'audio/webm' })
-        const formData = new FormData()
-        formData.append('audio', blob, 'recording.webm')
+        this.recordedAudio = true
       },
       handleDataAvailable (event) {
         this.chunks.push(event.data)

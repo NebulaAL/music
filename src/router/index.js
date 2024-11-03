@@ -17,6 +17,7 @@ export default new Router({
     {
       path: '/',
       name: 'index',
+      redirect: '/analysis',
       component: index,
       children: [
         {
